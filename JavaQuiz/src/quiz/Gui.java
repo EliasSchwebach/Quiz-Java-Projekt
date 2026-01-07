@@ -21,28 +21,13 @@ public class Gui extends JFrame {
 	private JButton btnMovie;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Gui frame = new Gui();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public Gui() {
 
 		initialize();
 	}
+
 	private void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -55,7 +40,9 @@ public class Gui extends JFrame {
 		contentPane.add(getBtnAllg());
 		contentPane.add(getBtnVideoGames());
 		contentPane.add(getBtnMovie());
+		setVisible(true);
 	}
+
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
 			lblNewLabel = new JLabel("Java Quiz Game");
@@ -64,6 +51,7 @@ public class Gui extends JFrame {
 		}
 		return lblNewLabel;
 	}
+
 	private JLabel getLblNewLabel_1() {
 		if (lblNewLabel_1 == null) {
 			lblNewLabel_1 = new JLabel("Themen Gebiet Aussuchen");
@@ -72,6 +60,7 @@ public class Gui extends JFrame {
 		}
 		return lblNewLabel_1;
 	}
+
 	private JButton getBtnAllg() {
 		if (btnAllg == null) {
 			btnAllg = new JButton("Allgemein Wissen");
@@ -79,6 +68,7 @@ public class Gui extends JFrame {
 		}
 		return btnAllg;
 	}
+
 	private JButton getBtnVideoGames() {
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
@@ -86,6 +76,7 @@ public class Gui extends JFrame {
 		}
 		return btnVideoGames;
 	}
+
 	private JButton getBtnMovie() {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
