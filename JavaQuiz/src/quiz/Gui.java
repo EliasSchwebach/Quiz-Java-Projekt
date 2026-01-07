@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -19,13 +20,20 @@ public class Gui extends JFrame {
 	private JButton btnAllg;
 	private JButton btnVideoGames;
 	private JButton btnMovie;
+	private Controller controller;
 
 	/**
 	 * Create the frame.
 	 */
-	public Gui() {
-
+	public Gui(Controller controller) {
+		try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace(); 
+        }
+		
 		initialize();
+		this.controller = controller;
 	}
 
 	private void initialize() {
@@ -72,7 +80,7 @@ public class Gui extends JFrame {
 	private JButton getBtnVideoGames() {
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
-			btnVideoGames.setBounds(263, 78, 117, 29);
+			btnVideoGames.setBounds(238, 77, 158, 29);
 		}
 		return btnVideoGames;
 	}
@@ -81,7 +89,7 @@ public class Gui extends JFrame {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
 			btnMovie.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnMovie.setBounds(27, 175, 117, 29);
+			btnMovie.setBounds(27, 175, 158, 29);
 		}
 		return btnMovie;
 	}
