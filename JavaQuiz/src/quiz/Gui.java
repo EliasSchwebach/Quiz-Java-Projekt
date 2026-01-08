@@ -10,6 +10,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.Window.Type;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Toolkit;
 
 public class Gui extends JFrame {
 
@@ -26,6 +30,10 @@ public class Gui extends JFrame {
 	 * Create the frame.
 	 */
 	public Gui(Controller controller) {
+		setFont(new Font("Cambria", Font.PLAIN, 17));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Home\\OneDrive - Berufliches Schulzentrum für Wirtschaft und Datenverarbeitung\\Dokumente\\GitHub\\Quiz-Java-Projekt\\JavaQuiz\\src\\Bilder\\Held_der_Steine.jpg"));
+		setTitle("JAVA QUIZ VON ELIAS UND MARIAN");
+		setBackground(new Color(245, 245, 245));
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -40,6 +48,7 @@ public class Gui extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(220, 220, 220));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -73,7 +82,7 @@ public class Gui extends JFrame {
 		if (btnAllg == null) {
 			btnAllg = new JButton("Allgemein Wissen");
 			btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnAllg.setBounds(27, 78, 158, 29);
+			btnAllg.setBounds(27, 78, 158, 60);
 		}
 		return btnAllg;
 	}
@@ -82,7 +91,7 @@ public class Gui extends JFrame {
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
 			btnVideoGames.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnVideoGames.setBounds(238, 77, 158, 29);
+			btnVideoGames.setBounds(238, 78, 158, 60);
 		}
 		return btnVideoGames;
 	}
@@ -91,7 +100,7 @@ public class Gui extends JFrame {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
 			btnMovie.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnMovie.setBounds(27, 175, 158, 29);
+			btnMovie.setBounds(27, 175, 158, 60);
 		}
 		return btnMovie;
 	}
