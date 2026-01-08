@@ -72,6 +72,7 @@ public class Gui extends JFrame {
 	private JButton getBtnAllg() {
 		if (btnAllg == null) {
 			btnAllg = new JButton("Allgemein Wissen");
+			btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
 			btnAllg.setBounds(27, 78, 158, 29);
 		}
 		return btnAllg;
@@ -80,6 +81,7 @@ public class Gui extends JFrame {
 	private JButton getBtnVideoGames() {
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
+			btnVideoGames.setFont(new Font("Minecraft", Font.PLAIN, 13));
 			btnVideoGames.setBounds(238, 77, 158, 29);
 		}
 		return btnVideoGames;
