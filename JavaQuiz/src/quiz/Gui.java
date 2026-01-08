@@ -27,11 +27,11 @@ public class Gui extends JFrame {
 	 */
 	public Gui(Controller controller) {
 		try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-            e.printStackTrace(); 
-        }
-		
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		initialize();
 		this.controller = controller;
 	}
