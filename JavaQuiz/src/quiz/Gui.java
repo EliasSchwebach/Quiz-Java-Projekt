@@ -82,11 +82,14 @@ public class Gui extends JFrame {
 
 	private JButton getBtnAllg() {
 		if (btnAllg == null) {
-			btnAllg = new JButton("Allgemein Wissen");
-			btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnAllg.setBounds(27, 78, 158, 60);
-		}
-		return btnAllg;
+	        btnAllg = new JButton("Allgemein Wissen");
+	        btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
+	        btnAllg.setBounds(27, 78, 158, 60);
+	        
+	        // MVC-Konform: Die Gui delegiert an den Controller
+	        btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
+	    }
+	    return btnAllg;
 	}
 
 	private JButton getBtnVideoGames() {
@@ -109,5 +112,12 @@ public class Gui extends JFrame {
 			btnMovie.setBounds(121, 166, 158, 60);
 		}
 		return btnMovie;
+	}
+	
+	public void switchPanel(JPanel newPanel) {
+	    this.getContentPane().removeAll(); // Entfernt das Hauptmenü
+	    this.getContentPane().add(newPanel); // Fügt das Quiz-Panel hinzu
+	    this.revalidate(); // Berechnet das Layout neu
+	    this.repaint();    // Zeichnet das Fenster neu
 	}
 }
