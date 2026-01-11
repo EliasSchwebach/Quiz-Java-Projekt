@@ -14,6 +14,8 @@ import java.awt.Color;
 import java.awt.Window.Type;
 import java.awt.Dialog.ModalExclusionType;
 import java.awt.Toolkit;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Gui extends JFrame {
 
@@ -99,8 +101,12 @@ public class Gui extends JFrame {
 	private JButton getBtnMovie() {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
+			btnMovie.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
 			btnMovie.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnMovie.setBounds(27, 175, 158, 60);
+			btnMovie.setBounds(121, 166, 158, 60);
 		}
 		return btnMovie;
 	}

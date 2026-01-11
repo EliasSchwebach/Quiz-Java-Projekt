@@ -1,0 +1,86 @@
+package quiz;
+
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class AllgemeinwissenPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JLabel lblTitel;
+	private JTextField textFieldFrage;
+	private JButton btnAntwort1;
+	private JButton btnAntwort2;
+	private JButton btnAntwort3;
+	private JButton btnAntwort4;
+	private JButton btnBack;
+
+	/**
+	 * Create the panel.
+	 */
+	public AllgemeinwissenPanel() {
+
+		initialize();
+	}
+	private void initialize() {
+		setLayout(null);
+		add(getLblTitel());
+		add(getTextFieldFrage());
+		add(getBtnAntwort1());
+		add(getBtnAntwort2());
+		add(getBtnAntwort3());
+		add(getBtnAntwort4());
+		add(getBtnBack());
+	}
+	private JLabel getLblTitel() {
+		if (lblTitel == null) {
+			lblTitel = new JLabel("Allgemein Wissens Quiz");
+			lblTitel.setBounds(137, 6, 174, 16);
+		}
+		return lblTitel;
+	}
+	private JTextField getTextFieldFrage() {
+		if (textFieldFrage == null) {
+			textFieldFrage = new JTextField();
+			textFieldFrage.setBounds(115, 34, 209, 67);
+			textFieldFrage.setColumns(10);
+		}
+		return textFieldFrage;
+	}
+	private JButton getBtnAntwort1() {
+		if (btnAntwort1 == null) {
+			btnAntwort1 = new JButton("");
+			btnAntwort1.setBounds(19, 128, 161, 67);
+		}
+		return btnAntwort1;
+	}
+	private JButton getBtnAntwort2() {
+		if (btnAntwort2 == null) {
+			btnAntwort2 = new JButton("");
+			btnAntwort2.setBounds(19, 206, 161, 67);
+		}
+		return btnAntwort2;
+	}
+	private JButton getBtnAntwort3() {
+		if (btnAntwort3 == null) {
+			btnAntwort3 = new JButton("");
+			btnAntwort3.setBounds(272, 128, 161, 67);
+		}
+		return btnAntwort3;
+	}
+	private JButton getBtnAntwort4() {
+		if (btnAntwort4 == null) {
+			btnAntwort4 = new JButton("");
+			btnAntwort4.setBounds(272, 206, 161, 67);
+		}
+		return btnAntwort4;
+	}
+	private JButton getBtnBack() {
+		if (btnBack == null) {
+			btnBack = new JButton("Zurück");
+			btnBack.setBounds(0, 1, 117, 29);
+		}
+		return btnBack;
+	}
+}
