@@ -1,15 +1,12 @@
- package quiz;
+package quiz;
 
 public class Main {
 
 	public static void main(String[] args) {
-		// Set the system look and feel (on Windows this uses the Windows LAF if
-		// available)
+		// macht neuen Windows Look
 		try {
 			javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
-			// If setting the system L&F fails, print a stack trace and continue with
-			// default L&F
 			e.printStackTrace();
 		}
 

@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.Font;
 
 public class AllgemeinwissenPanel extends JPanel {
 
@@ -32,11 +33,13 @@ public class AllgemeinwissenPanel extends JPanel {
 		add(getBtnAntwort3());
 		add(getBtnAntwort4());
 		add(getBtnBack());
+		setVisible(true);
 	}
 	private JLabel getLblTitel() {
 		if (lblTitel == null) {
 			lblTitel = new JLabel("Allgemein Wissens Quiz");
-			lblTitel.setBounds(137, 6, 174, 16);
+			lblTitel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+			lblTitel.setBounds(137, 6, 174, 17);
 		}
 		return lblTitel;
 	}

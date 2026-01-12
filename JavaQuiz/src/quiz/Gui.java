@@ -86,7 +86,6 @@ public class Gui extends JFrame {
 	        btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
 	        btnAllg.setBounds(27, 78, 158, 60);
 	        
-	        // MVC-Konform: Die Gui delegiert an den Controller
 	        btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
 	    }
 	    return btnAllg;
@@ -114,10 +113,11 @@ public class Gui extends JFrame {
 		return btnMovie;
 	}
 	
-	public void switchPanel(JPanel newPanel) {
-	    this.getContentPane().removeAll(); // Entfernt das Hauptmenü
-	    this.getContentPane().add(newPanel); // Fügt das Quiz-Panel hinzu
-	    this.revalidate(); // Berechnet das Layout neu
-	    this.repaint();    // Zeichnet das Fenster neu
+	public void setView(JPanel neuesPanel) {
+	    this.setContentPane(neuesPanel);
+	    this.revalidate();
+	    this.repaint();
 	}
+	
+	
 }
