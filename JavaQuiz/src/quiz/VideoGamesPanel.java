@@ -111,6 +111,7 @@ public class VideoGamesPanel extends JPanel {
 			btnBack.setBorder(new LineBorder(Color.GRAY, 1));
 			btnBack.setFocusPainted(false);
 			btnBack.setBounds(20, 20, 120, 40);
+			
 		}
 		return btnBack;
 	}
