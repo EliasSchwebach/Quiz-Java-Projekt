@@ -95,6 +95,7 @@ public class Gui extends JFrame {
 			btnAllg.setForeground(Color.WHITE);
 			btnAllg.setBackground(new Color(35, 50, 75));
 			btnAllg.setFocusPainted(false);
+			//tets
 			btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnAllg.setBounds(80, 250, 460, 160);
 
