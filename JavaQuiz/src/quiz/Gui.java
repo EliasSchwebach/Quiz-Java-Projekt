@@ -93,9 +93,9 @@ public class Gui extends JFrame {
 			btnAllg = new JButton("Allgemein Wissen");
 			btnAllg.setFont(new Font("Arial", Font.BOLD, 22));
 			btnAllg.setForeground(Color.WHITE);
-			btnAllg.setBackground(new Color(100, 110, 130));
+			btnAllg.setBackground(new Color(35, 50, 75));
 			btnAllg.setFocusPainted(false);
-			btnAllg.setBorder(new LineBorder(new Color(120, 140, 170), 3, true));
+			btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnAllg.setBounds(80, 250, 460, 160);
 
 			btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
