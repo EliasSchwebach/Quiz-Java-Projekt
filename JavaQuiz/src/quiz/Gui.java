@@ -19,6 +19,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.Dimension;
 import javax.swing.border.LineBorder;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Gui extends JFrame {
 
@@ -95,9 +97,25 @@ public class Gui extends JFrame {
 			btnAllg.setForeground(Color.WHITE);
 			btnAllg.setBackground(new Color(35, 50, 75));
 			btnAllg.setFocusPainted(false);
-			//tet
 			btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnAllg.setBounds(80, 250, 460, 160);
+
+			// Hover-Effekt mit Größenänderung
+			btnAllg.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					btnAllg.setBackground(new Color(120, 130, 150));
+					btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+					btnAllg.setBounds(70, 240, 480, 180);
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					btnAllg.setBackground(new Color(100, 110, 130));
+					btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+					btnAllg.setBounds(80, 250, 460, 160);
+				}
+			});
 
 			btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
 		}
@@ -114,6 +132,23 @@ public class Gui extends JFrame {
 			btnVideoGames.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnVideoGames.setBounds(740, 250, 460, 160);
 
+			// Hover-Effekt mit Größenänderung
+			btnVideoGames.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					btnVideoGames.setBackground(new Color(50, 70, 100));
+					btnVideoGames.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
+					btnVideoGames.setBounds(730, 240, 480, 180);
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					btnVideoGames.setBackground(new Color(35, 50, 75));
+					btnVideoGames.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+					btnVideoGames.setBounds(740, 250, 460, 160);
+				}
+			});
+
 			btnVideoGames.addActionListener(e -> controller.zeigeVideoGames());
 		}
 		return btnVideoGames;
@@ -129,6 +164,23 @@ public class Gui extends JFrame {
 			btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnMovie.setBounds(360, 515, 460, 100);
 
+			// Hover-Effekt mit Größenänderung
+			btnMovie.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseEntered(MouseEvent e) {
+					btnMovie.setBackground(new Color(50, 70, 100));
+					btnMovie.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
+					btnMovie.setBounds(350, 505, 480, 120);
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					btnMovie.setBackground(new Color(35, 50, 75));
+					btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+					btnMovie.setBounds(360, 515, 460, 100);
+				}
+			});
+
 			btnMovie.addActionListener(e -> controller.zeigeMovie());
 		}
 		return btnMovie;
@@ -139,6 +191,5 @@ public class Gui extends JFrame {
 		this.revalidate();
 		this.repaint();
 	}
-	
 
 }
