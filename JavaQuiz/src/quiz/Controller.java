@@ -14,6 +14,12 @@ public class Controller {
 		fragenJson = Allgemeinwissen.getFragen();
 	}
 	
+	public void loadVideoGamesFragen()
+	{
+		fragenJson = VideoGames.getFragen();
+	}
+	
+	
 	public void zeigeAllgemeinwissen()
 	{
 	    AllgemeinwissenPanel meinPanel = new AllgemeinwissenPanel();
