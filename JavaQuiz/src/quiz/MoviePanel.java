@@ -6,7 +6,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 
-public class VideoGamesPanel extends JPanel {
+public class MoviePanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitel;
@@ -20,7 +20,7 @@ public class VideoGamesPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public VideoGamesPanel() {
+	public MoviePanel() {
 
 		initialize();
 	}
@@ -37,7 +37,7 @@ public class VideoGamesPanel extends JPanel {
 	}
 	private JLabel getLblTitel() {
 		if (lblTitel == null) {
-			lblTitel = new JLabel("Video Games Quiz");
+			lblTitel = new JLabel("Movie Quiz");
 			lblTitel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 			lblTitel.setBounds(137, 6, 174, 17);
 		}

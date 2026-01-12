@@ -33,7 +33,8 @@ public class Gui extends JFrame {
 	 */
 	public Gui(Controller controller) {
 		setFont(new Font("Cambria", Font.PLAIN, 17));
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\willmsmarian\\OneDrive - Berufliches Schulzentrum für Wirtschaft und Datenverarbeitung\\Dokumente\\GitHub\\Quiz-Java-Projekt1\\JavaQuiz\\src\\Bilder\\Held_der_Steine.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(
+				"C:\\Users\\willmsmarian\\OneDrive - Berufliches Schulzentrum für Wirtschaft und Datenverarbeitung\\Dokumente\\GitHub\\Quiz-Java-Projekt1\\JavaQuiz\\src\\Bilder\\Held_der_Steine.jpg"));
 		setTitle("JAVA QUIZ VON ELIAS UND MARIAN");
 		setBackground(new Color(245, 245, 245));
 		try {
@@ -82,13 +83,13 @@ public class Gui extends JFrame {
 
 	private JButton getBtnAllg() {
 		if (btnAllg == null) {
-	        btnAllg = new JButton("Allgemein Wissen");
-	        btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
-	        btnAllg.setBounds(27, 78, 158, 60);
-	        
-	        btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
-	    }
-	    return btnAllg;
+			btnAllg = new JButton("Allgemein Wissen");
+			btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
+			btnAllg.setBounds(27, 78, 158, 60);
+
+			btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
+		}
+		return btnAllg;
 	}
 
 	private JButton getBtnVideoGames() {
@@ -96,6 +97,8 @@ public class Gui extends JFrame {
 			btnVideoGames = new JButton("Video Games");
 			btnVideoGames.setFont(new Font("Minecraft", Font.PLAIN, 13));
 			btnVideoGames.setBounds(238, 78, 158, 60);
+
+			btnVideoGames.addActionListener(e -> controller.zeigeVideoGames());
 		}
 		return btnVideoGames;
 	}
@@ -103,21 +106,18 @@ public class Gui extends JFrame {
 	private JButton getBtnMovie() {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
-			btnMovie.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
 			btnMovie.setFont(new Font("Minecraft", Font.PLAIN, 13));
 			btnMovie.setBounds(121, 166, 158, 60);
+
+			btnMovie.addActionListener(e -> controller.zeigeMovie());
 		}
 		return btnMovie;
 	}
-	
+
 	public void setView(JPanel neuesPanel) {
-	    this.setContentPane(neuesPanel);
-	    this.revalidate();
-	    this.repaint();
+		this.setContentPane(neuesPanel);
+		this.revalidate();
+		this.repaint();
 	}
-	
-	
+
 }

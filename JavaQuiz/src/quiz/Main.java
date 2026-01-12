@@ -10,7 +10,6 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		// Ensure GUI is created on the Event Dispatch Thread
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				new Controller();
