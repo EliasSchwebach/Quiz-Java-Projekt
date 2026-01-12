@@ -16,6 +16,9 @@ import java.awt.Dialog.ModalExclusionType;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import javax.swing.border.LineBorder;
 
 public class Gui extends JFrame {
 
@@ -49,9 +52,9 @@ public class Gui extends JFrame {
 
 	private void initialize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1280, 720);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(220, 220, 220));
+		contentPane.setBackground(new Color(26, 35, 52));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -66,8 +69,10 @@ public class Gui extends JFrame {
 	private JLabel getLblNewLabel() {
 		if (lblNewLabel == null) {
 			lblNewLabel = new JLabel("Java Quiz Game");
-			lblNewLabel.setFont(new Font("Minecraft", Font.PLAIN, 17));
-			lblNewLabel.setBounds(147, 6, 158, 34);
+			lblNewLabel.setForeground(Color.WHITE);
+			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel.setFont(new Font("Arial", Font.BOLD, 48));
+			lblNewLabel.setBounds(340, 40, 600, 60);
 		}
 		return lblNewLabel;
 	}
@@ -75,8 +80,10 @@ public class Gui extends JFrame {
 	private JLabel getLblNewLabel_1() {
 		if (lblNewLabel_1 == null) {
 			lblNewLabel_1 = new JLabel("Themen Gebiet Aussuchen");
-			lblNewLabel_1.setFont(new Font("Minecraft", Font.PLAIN, 14));
-			lblNewLabel_1.setBounds(136, 32, 219, 34);
+			lblNewLabel_1.setForeground(new Color(160, 170, 190));
+			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 24));
+			lblNewLabel_1.setBounds(340, 110, 600, 40);
 		}
 		return lblNewLabel_1;
 	}
@@ -84,8 +91,12 @@ public class Gui extends JFrame {
 	private JButton getBtnAllg() {
 		if (btnAllg == null) {
 			btnAllg = new JButton("Allgemein Wissen");
-			btnAllg.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnAllg.setBounds(27, 78, 158, 60);
+			btnAllg.setFont(new Font("Arial", Font.BOLD, 22));
+			btnAllg.setForeground(Color.WHITE);
+			btnAllg.setBackground(new Color(100, 110, 130));
+			btnAllg.setFocusPainted(false);
+			btnAllg.setBorder(new LineBorder(new Color(120, 140, 170), 3, true));
+			btnAllg.setBounds(80, 250, 460, 160);
 
 			btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
 		}
@@ -95,8 +106,12 @@ public class Gui extends JFrame {
 	private JButton getBtnVideoGames() {
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
-			btnVideoGames.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnVideoGames.setBounds(238, 78, 158, 60);
+			btnVideoGames.setFont(new Font("Arial", Font.BOLD, 22));
+			btnVideoGames.setForeground(Color.WHITE);
+			btnVideoGames.setBackground(new Color(35, 50, 75));
+			btnVideoGames.setFocusPainted(false);
+			btnVideoGames.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+			btnVideoGames.setBounds(740, 250, 460, 160);
 
 			btnVideoGames.addActionListener(e -> controller.zeigeVideoGames());
 		}
@@ -106,8 +121,12 @@ public class Gui extends JFrame {
 	private JButton getBtnMovie() {
 		if (btnMovie == null) {
 			btnMovie = new JButton("Filme");
-			btnMovie.setFont(new Font("Minecraft", Font.PLAIN, 13));
-			btnMovie.setBounds(121, 166, 158, 60);
+			btnMovie.setFont(new Font("Arial", Font.BOLD, 22));
+			btnMovie.setForeground(Color.WHITE);
+			btnMovie.setBackground(new Color(35, 50, 75));
+			btnMovie.setFocusPainted(false);
+			btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+			btnMovie.setBounds(360, 515, 460, 100);
 
 			btnMovie.addActionListener(e -> controller.zeigeMovie());
 		}
