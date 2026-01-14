@@ -14,11 +14,11 @@ public class QuizDatenQuelle
 		String urlString = "";
 
 		// auswählen
-		if (thema.equalsIgnoreCase("videogames")) {
+		if (thema.equals("videogames")) {
 			urlString = "https://opentdb.com/api.php?amount=50&category=15&type=multiple";
-		} else if (thema.equalsIgnoreCase("filme")) {
+		} else if (thema.equals("filme")) {
 			urlString = "https://opentdb.com/api.php?amount=50&category=11&type=multiple";
-		} else if (thema.equalsIgnoreCase("allgemeinwissen")) {
+		} else if (thema.equals("allgemeinwissen")) {
 			urlString = "https://opentdb.com/api.php?amount=50&category=9&type=multiple";
 		}
 

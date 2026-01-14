@@ -117,7 +117,9 @@ public class Gui extends JFrame {
 				}
 			});
 
-			btnAllg.addActionListener(e -> controller.zeigeAllgemeinwissen());
+			btnAllg.addActionListener(e -> {
+			    controller.loadAllgemeinwissenFragen();
+			});
 		}
 		return btnAllg;
 	}
@@ -149,7 +151,9 @@ public class Gui extends JFrame {
 				}
 			});
 
-			btnVideoGames.addActionListener(e -> controller.zeigeVideoGames());
+			btnVideoGames.addActionListener(e -> {
+			    controller.loadVideoGamesFragen();
+			});
 		}
 		return btnVideoGames;
 	}
@@ -181,7 +185,9 @@ public class Gui extends JFrame {
 				}
 			});
 
-			btnMovie.addActionListener(e -> controller.zeigeMovie());
+			btnMovie.addActionListener(e -> {
+			    controller.loadMovieFragen(); 
+			});
 		}
 		return btnMovie;
 	}

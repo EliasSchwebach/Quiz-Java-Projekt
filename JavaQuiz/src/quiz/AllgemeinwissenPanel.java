@@ -9,11 +9,11 @@ public class AllgemeinwissenPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitel;
-	private JTextField textFieldFrage;
-	private JButton btnAntwort1;
-	private JButton btnAntwort2;
-	private JButton btnAntwort3;
-	private JButton btnAntwort4;
+	protected JTextField textFieldFrage;
+	protected JButton btnAntwort1;
+	protected JButton btnAntwort2;
+	protected JButton btnAntwort3;
+	protected JButton btnAntwort4;
 	private JButton btnBack;
 
 	/**
@@ -40,36 +40,36 @@ public class AllgemeinwissenPanel extends JPanel {
 		}
 		return lblTitel;
 	}
-	private JTextField getTextFieldFrage() {
+	protected JTextField getTextFieldFrage() {
 		if (textFieldFrage == null) {
 			textFieldFrage = new JTextField();
-			textFieldFrage.setBounds(115, 34, 209, 67);
+			textFieldFrage.setBounds(19, 34, 414, 83);
 			textFieldFrage.setColumns(10);
 		}
 		return textFieldFrage;
 	}
-	private JButton getBtnAntwort1() {
+	protected JButton getBtnAntwort1() {
 		if (btnAntwort1 == null) {
 			btnAntwort1 = new JButton("");
 			btnAntwort1.setBounds(19, 128, 161, 67);
 		}
 		return btnAntwort1;
 	}
-	private JButton getBtnAntwort2() {
+	protected JButton getBtnAntwort2() {
 		if (btnAntwort2 == null) {
 			btnAntwort2 = new JButton("");
 			btnAntwort2.setBounds(19, 206, 161, 67);
 		}
 		return btnAntwort2;
 	}
-	private JButton getBtnAntwort3() {
+	protected JButton getBtnAntwort3() {
 		if (btnAntwort3 == null) {
 			btnAntwort3 = new JButton("");
 			btnAntwort3.setBounds(272, 128, 161, 67);
 		}
 		return btnAntwort3;
 	}
-	private JButton getBtnAntwort4() {
+	protected JButton getBtnAntwort4() {
 		if (btnAntwort4 == null) {
 			btnAntwort4 = new JButton("");
 			btnAntwort4.setBounds(272, 206, 161, 67);
