@@ -235,6 +235,9 @@ public class Gui extends JFrame {
 			btnVideoGames.setFont(new Font("Arial", Font.BOLD, 22));
 
 			btnVideoGames.setForeground(Color.WHITE);
+			
+			btnAllg.setContentAreaFilled(false); 
+			btnAllg.setOpaque(false);      
 
 			btnVideoGames.setBackground(new Color(35, 50, 75));
 
@@ -299,6 +302,8 @@ public class Gui extends JFrame {
 			btnMovie.setForeground(Color.WHITE);
 
 			btnMovie.setBackground(new Color(35, 50, 75));
+			btnAllg.setContentAreaFilled(false); 
+			btnAllg.setOpaque(false);      
 
 			btnMovie.setFocusPainted(false);
 
