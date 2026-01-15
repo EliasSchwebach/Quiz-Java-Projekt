@@ -48,9 +48,7 @@ public class Gui extends JFrame {
 
 		setFont(new Font("Cambria", Font.PLAIN, 17));
 
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-
-				"C:\\Users\\willmsmarian\\OneDrive - Berufliches Schulzentrum für Wirtschaft und Datenverarbeitung\\Dokumente\\GitHub\\Quiz-Java-Projekt1\\JavaQuiz\\src\\Bilder\\Held_der_Steine.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Gui.class.getResource("/Bilder/Held_der_Steine.jpg")));
 
 		setTitle("JAVA QUIZ VON ELIAS UND MARIAN");
 
