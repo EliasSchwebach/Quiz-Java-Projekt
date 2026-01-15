@@ -104,6 +104,8 @@ public class AllgemeinwissenPanel extends JPanel {
 			btnBack = new JButton("Zurück");
 			btnBack.setFont(new Font("Arial", Font.BOLD, 14));
 			btnBack.setForeground(Color.WHITE);
+			btnBack.setContentAreaFilled(false); 
+			btnBack.setOpaque(false);
 			btnBack.setBackground(new Color(80, 40, 40)); 
 			btnBack.setBorder(new LineBorder(Color.GRAY, 1));
 			btnBack.setFocusPainted(false);
