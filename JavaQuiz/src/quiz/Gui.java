@@ -296,28 +296,18 @@ public class Gui extends JFrame {
 			btnMovie.addMouseListener(new MouseAdapter() {
 
 				@Override
+			    public void mouseEntered(MouseEvent e) {
+			        btnMovie.setBackground(new Color(50, 70, 100));
+			        btnMovie.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
+			        btnMovie.setBounds(384, 461, 480, 180); 
+			    }
 
-				public void mouseEntered(MouseEvent e) {
-
-					btnMovie.setBackground(new Color(50, 70, 100));
-
-					btnMovie.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
-
-					btnMovie.setBounds(350, 505, 480, 120);
-
-				}
-
-				@Override
-
-				public void mouseExited(MouseEvent e) {
-
-					btnMovie.setBackground(new Color(35, 50, 75));
-
-					btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
-					btnMovie.setBounds(360, 515, 460, 100);
-
-				}
+			    @Override
+			    public void mouseExited(MouseEvent e) {
+			        btnMovie.setBackground(new Color(35, 50, 75));
+			        btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+			        btnMovie.setBounds(394, 471, 460, 160);
+			    }
 
 			});
 

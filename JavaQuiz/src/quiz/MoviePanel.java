@@ -109,7 +109,7 @@ public class MoviePanel extends JPanel {
 			btnBack.setForeground(Color.WHITE);
 			btnBack.setContentAreaFilled(false); 
 			btnBack.setOpaque(false);
-			btnBack.setBackground(new Color(80, 40, 40)); 
+			btnBack.setBackground(new Color(80, 40, 40));
 			btnBack.setBorder(new LineBorder(Color.GRAY, 1));
 			btnBack.setFocusPainted(false);
 			btnBack.setBounds(20, 20, 120, 40);
