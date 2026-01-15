@@ -173,7 +173,7 @@ public class Gui extends JFrame {
 			btnAllg.setForeground(Color.WHITE);
 			
 			btnAllg.setContentAreaFilled(false); 
-			btnAllg.setOpaque(true);             
+			btnAllg.setOpaque(false);             
 			btnAllg.setBackground(new Color(35, 50, 75));
 
 			btnAllg.setFocusPainted(false);
