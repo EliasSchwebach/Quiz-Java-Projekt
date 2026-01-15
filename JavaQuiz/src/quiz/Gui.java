@@ -37,6 +37,8 @@ public class Gui extends JFrame {
 	private JButton btnMovie;
 
 	private Controller controller;
+	private JButton btnAnmelden;
+	private JButton btnAusloggen;
 
 	/**
 	 * 
@@ -95,6 +97,8 @@ public class Gui extends JFrame {
 		contentPane.add(getBtnVideoGames());
 
 		contentPane.add(getBtnMovie());
+		contentPane.add(getBtnAnmelden());
+		contentPane.add(getBtnAusloggen());
 
 		setVisible(true);
 
@@ -333,4 +337,36 @@ public class Gui extends JFrame {
 
 	}
 
+	private JButton getBtnAnmelden() {
+		if (btnAnmelden == null) {
+			btnAnmelden = new JButton("Anmelden");
+			btnAnmelden.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			btnAnmelden.setOpaque(false);
+			btnAnmelden.setForeground(Color.WHITE);
+			btnAnmelden.setFont(new Font("Arial", Font.BOLD, 22));
+			btnAnmelden.setFocusPainted(false);
+			btnAnmelden.setContentAreaFilled(false);
+			btnAnmelden.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+			btnAnmelden.setBackground(new Color(35, 50, 75));
+			btnAnmelden.setBounds(964, 11, 290, 40);
+		}
+		return btnAnmelden;
+	}
+	private JButton getBtnAusloggen() {
+		if (btnAusloggen == null) {
+			btnAusloggen = new JButton("Ausloggen");
+			btnAusloggen.setOpaque(false);
+			btnAusloggen.setForeground(Color.WHITE);
+			btnAusloggen.setFont(new Font("Arial", Font.BOLD, 22));
+			btnAusloggen.setFocusPainted(false);
+			btnAusloggen.setContentAreaFilled(false);
+			btnAusloggen.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+			btnAusloggen.setBackground(new Color(35, 50, 75));
+			btnAusloggen.setBounds(964, 62, 290, 40);
+		}
+		return btnAusloggen;
+	}
 }
