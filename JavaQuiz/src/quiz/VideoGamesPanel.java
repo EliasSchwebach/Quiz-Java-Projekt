@@ -55,7 +55,7 @@ public class VideoGamesPanel extends JPanel
 			lblTitel = new JLabel("Video Games Quiz");
 			lblTitel.setForeground(Color.WHITE);
 			lblTitel.setHorizontalAlignment(SwingConstants.CENTER);
-			lblTitel.setFont(new Font("Arial", Font.BOLD, 40));
+			lblTitel.setFont(new Font("Arial", Font.BOLD, 42));
 			lblTitel.setBounds(340, 30, 600, 50);
 		}
 		return lblTitel;
@@ -131,6 +131,7 @@ public class VideoGamesPanel extends JPanel
 	{
 		if (btnBack == null) {
 			btnBack = styleBackButton(new JButton("Zurück"), 20, 20);
+			btnBack.setToolTipText("Drücken, um zum Hauptfenster zu gelangen");
 
 			btnBack.addActionListener(e -> {
 				if (controller != null) {

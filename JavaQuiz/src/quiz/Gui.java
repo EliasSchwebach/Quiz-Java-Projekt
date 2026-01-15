@@ -91,7 +91,7 @@ public class Gui extends JFrame
 	private JLabel getLblNewLabel()
 	{
 		if (lblNewLabel == null) {
-			lblNewLabel = new JLabel("Java Quiz Game");
+			lblNewLabel = new JLabel("Java Quiz Menü");
 			lblNewLabel.setForeground(Color.WHITE);
 			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 			lblNewLabel.setFont(new Font("Arial", Font.BOLD, 48));
@@ -104,7 +104,7 @@ public class Gui extends JFrame
 	private JLabel getLblNewLabel_1()
 	{
 		if (lblNewLabel_1 == null) {
-			lblNewLabel_1 = new JLabel("Themen Gebiet Aussuchen");
+			lblNewLabel_1 = new JLabel("Themen Gebiet aussuchen");
 			lblNewLabel_1.setForeground(new Color(160, 170, 190));
 			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 24));
@@ -118,6 +118,7 @@ public class Gui extends JFrame
 	{
 		if (btnAllg == null) {
 			btnAllg = new JButton("Allgemein Wissen");
+			btnAllg.setToolTipText("Allgemein Wissens Quiz");
 			btnAllg.setFont(new Font("Arial", Font.BOLD, 22));
 			btnAllg.setForeground(Color.WHITE);
 			btnAllg.setContentAreaFilled(false);
@@ -159,6 +160,7 @@ public class Gui extends JFrame
 	{
 		if (btnVideoGames == null) {
 			btnVideoGames = new JButton("Video Games");
+			btnVideoGames.setToolTipText("Video Games Quiz");
 			btnVideoGames.setFont(new Font("Arial", Font.BOLD, 22));
 			btnVideoGames.setForeground(Color.WHITE);
 			btnVideoGames.setContentAreaFilled(false);
@@ -178,7 +180,6 @@ public class Gui extends JFrame
 				}
 
 				@Override
-
 				public void mouseExited(MouseEvent e)
 				{
 					btnVideoGames.setBackground(new Color(35, 50, 75));
@@ -199,7 +200,8 @@ public class Gui extends JFrame
 	private JButton getBtnMovie()
 	{
 		if (btnMovie == null) {
-			btnMovie = new JButton("Filme");
+			btnMovie = new JButton("Filme & Serien");
+			btnMovie.setToolTipText("Filme & Serien Quiz");
 			btnMovie.setFont(new Font("Arial", Font.BOLD, 22));
 			btnMovie.setForeground(Color.WHITE);
 			btnMovie.setBackground(new Color(35, 50, 75));
@@ -241,6 +243,7 @@ public class Gui extends JFrame
 	{
 		if (btnAnmelden == null) {
 			btnAnmelden = new JButton("Anmelden");
+			btnAnmelden.setToolTipText("Anmelden um den Punktestand zu sehen");
 			btnAnmelden.setOpaque(false);
 			btnAnmelden.setForeground(Color.WHITE);
 			btnAnmelden.setFont(new Font("Arial", Font.BOLD, 22));
@@ -248,7 +251,7 @@ public class Gui extends JFrame
 			btnAnmelden.setContentAreaFilled(false);
 			btnAnmelden.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnAnmelden.setBackground(new Color(35, 50, 75));
-			btnAnmelden.setBounds(964, 11, 290, 40);
+			btnAnmelden.setBounds(900, 44, 142, 71);
 		}
 		return btnAnmelden;
 	}
@@ -257,6 +260,7 @@ public class Gui extends JFrame
 	{
 		if (btnAusloggen == null) {
 			btnAusloggen = new JButton("Ausloggen");
+			btnAusloggen.setToolTipText("Ausloggen (Daten bleiben bestehen)");
 			btnAusloggen.setOpaque(false);
 			btnAusloggen.setForeground(Color.WHITE);
 			btnAusloggen.setFont(new Font("Arial", Font.BOLD, 22));
@@ -264,7 +268,7 @@ public class Gui extends JFrame
 			btnAusloggen.setContentAreaFilled(false);
 			btnAusloggen.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 			btnAusloggen.setBackground(new Color(35, 50, 75));
-			btnAusloggen.setBounds(964, 62, 290, 40);
+			btnAusloggen.setBounds(1074, 45, 142, 68);
 		}
 		return btnAusloggen;
 	}
@@ -284,19 +288,21 @@ public class Gui extends JFrame
 	private JLabel getLblHelligkeit() {
 	    if (lblHelligkeit == null) {
 	        lblHelligkeit = new JLabel("");
+	        lblHelligkeit.setHorizontalAlignment(SwingConstants.CENTER);
+	        lblHelligkeit.setToolTipText("Drücken, um die Darstellung zu wechseln");
 	        lblHelligkeit.setIcon(new ImageIcon(Gui.class.getResource("/Bilder/dunkel.png")));
-	        lblHelligkeit.setBounds(62, 62, 46, 24);
+	        lblHelligkeit.setBounds(40, 40, 41, 40);
 
 	        lblHelligkeit.addMouseListener(new MouseAdapter() {
 	            @Override
 	            public void mouseClicked(MouseEvent e) {
 	                istHell = !istHell;
 	                
-	                // 1. Icon tauschen
+	                //Icon tauschen
 	                String bildPfad = istHell ? "/Bilder/hell.png" : "/Bilder/dunkel.png";
 	                lblHelligkeit.setIcon(new ImageIcon(Gui.class.getResource(bildPfad)));
 
-	                // 2. GUI Farben anpassen
+	                // Farben aktualisieren
 	                updateTheme();
 	            }
 	        });
