@@ -236,8 +236,8 @@ public class Gui extends JFrame {
 
 			btnVideoGames.setForeground(Color.WHITE);
 			
-			btnAllg.setContentAreaFilled(false); 
-			btnAllg.setOpaque(false);      
+			btnVideoGames.setContentAreaFilled(false); 
+			btnVideoGames.setOpaque(false);      
 
 			btnVideoGames.setBackground(new Color(35, 50, 75));
 
@@ -302,14 +302,14 @@ public class Gui extends JFrame {
 			btnMovie.setForeground(Color.WHITE);
 
 			btnMovie.setBackground(new Color(35, 50, 75));
-			btnAllg.setContentAreaFilled(false); 
-			btnAllg.setOpaque(false);      
+			btnMovie.setContentAreaFilled(false); 
+			btnMovie.setOpaque(false);      
 
 			btnMovie.setFocusPainted(false);
 
 			btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 
-			btnMovie.setBounds(360, 515, 460, 100);
+			btnMovie.setBounds(394, 471, 460, 160);
 
 // Hover-Effekt mit Größenänderung 
 
