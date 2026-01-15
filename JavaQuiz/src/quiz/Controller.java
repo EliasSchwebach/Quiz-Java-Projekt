@@ -1,43 +1,83 @@
 package quiz;
 
-public class Controller {
+import java.util.ArrayList;
+
+import java.util.Collections;
+
+public class Controller
+
+{
+
 	private Gui gui;
+
 	private String fragenJson;
 
-	public Controller() {
+	private String[] alleFragenRoh;
+
+	private String aktuelleRichtigeAntwort;
+
+	public Controller()
+
+	{
+
 		this.gui = new Gui(this);
-		loadAllgemeinwissenFragen();
+
 	}
-	
+
 	public void loadAllgemeinwissenFragen()
+
 	{
-		fragenJson = Allgemeinwissen.getFragen();
+
+		fragenJson = QuizDatenQuelle.getFragen("allgemeinwissen");
+
 	}
-	
+
 	public void loadVideoGamesFragen()
+
 	{
-		fragenJson = VideoGames.getFragen();
+
+		fragenJson = QuizDatenQuelle.getFragen("videogames");
+
 	}
-	
-	
+
+	public void loadMovieFragen()
+
+	{
+
+		fragenJson = QuizDatenQuelle.getFragen("filme");
+
+	}
+
 	public void zeigeAllgemeinwissen()
+
 	{
-	    AllgemeinwissenPanel meinPanel = new AllgemeinwissenPanel();
-	    
-	    this.gui.setView(meinPanel);
+
+		AllgemeinwissenPanel meinPanel = new AllgemeinwissenPanel();
+
+
+		this.gui.setView(meinPanel);
+
 	}
-	
+
 	public void zeigeVideoGames()
+
 	{
+
 		VideoGamesPanel meinPanel = new VideoGamesPanel();
-	    
-	    this.gui.setView(meinPanel);
+
+
+		this.gui.setView(meinPanel);
+
 	}
-	
+
 	public void zeigeMovie()
+
 	{
+
 		MoviePanel meinPanel = new MoviePanel();
-	    
-	    this.gui.setView(meinPanel);
+
+
+		this.gui.setView(meinPanel);
+
 	}
 }

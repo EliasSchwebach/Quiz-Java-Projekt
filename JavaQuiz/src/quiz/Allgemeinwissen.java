@@ -10,10 +10,8 @@ import java.time.Duration;
 public class Allgemeinwissen {
 
     public static String getFragen() {
-        // Die URL aus deinem Beispiel
         String urlString = "https://opentdb.com/api.php?amount=50&category=9&type=multiple";
 
-        // Erstellen des JDK HttpClient (verfügbar ab Java 11)
         HttpClient httpClient = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();

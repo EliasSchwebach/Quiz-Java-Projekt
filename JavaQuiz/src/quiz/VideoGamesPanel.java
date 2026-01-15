@@ -16,11 +16,11 @@ public class VideoGamesPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitel;
-	private JTextField textFieldFrage;
-	private JButton btnAntwort1;
-	private JButton btnAntwort2;
-	private JButton btnAntwort3;
-	private JButton btnAntwort4;
+	protected JTextField textFieldFrage;
+	protected JButton btnAntwort1;
+	protected JButton btnAntwort2;
+	protected JButton btnAntwort3;
+	protected JButton btnAntwort4;
 	private JButton btnBack;
 
 	// Farben aus der Haupt-GUI
@@ -59,7 +59,7 @@ public class VideoGamesPanel extends JPanel {
 		return lblTitel;
 	}
 
-	private JTextField getTextFieldFrage() {
+	protected JTextField getTextFieldFrage() {
 		if (textFieldFrage == null) {
 			textFieldFrage = new JTextField();
 			textFieldFrage.setEditable(false);
@@ -74,28 +74,28 @@ public class VideoGamesPanel extends JPanel {
 		return textFieldFrage;
 	}
 
-	private JButton getBtnAntwort1() {
+	protected JButton getBtnAntwort1() {
 		if (btnAntwort1 == null) {
 			btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
 		}
 		return btnAntwort1;
 	}
 
-	private JButton getBtnAntwort2() {
+	protected JButton getBtnAntwort2() {
 		if (btnAntwort2 == null) {
 			btnAntwort2 = styleButton(new JButton("Antwort 2"), 650, 280);
 		}
 		return btnAntwort2;
 	}
 
-	private JButton getBtnAntwort3() {
+	protected JButton getBtnAntwort3() {
 		if (btnAntwort3 == null) {
 			btnAntwort3 = styleButton(new JButton("Antwort 3"), 240, 420);
 		}
 		return btnAntwort3;
 	}
 
-	private JButton getBtnAntwort4() {
+	protected JButton getBtnAntwort4() {
 		if (btnAntwort4 == null) {
 			btnAntwort4 = styleButton(new JButton("Antwort 4"), 650, 420);
 		}

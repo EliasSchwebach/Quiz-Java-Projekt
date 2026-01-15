@@ -7,16 +7,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/commons-codec-1.11.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/fluent-hc-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpclient-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpclient-cache-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpclient-osgi-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpclient-win-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpcore-4.4.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/httpmime-4.5.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/jna-4.5.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/willmsmarian/Downloads/httpcomponents-client-4.5.12-bin/httpcomponents-client-4.5.12/lib/jna-platform-4.5.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
