@@ -113,7 +113,8 @@ public class AllgemeinwissenPanel extends JPanel {
 		return btnBack;
 	}
 
-	private JButton styleButton(JButton btn, int x, int y) {
+	private JButton styleButton(JButton btn, int x, int y) 
+	{
 		btn.setFont(new Font("Arial", Font.BOLD, 18));
 		btn.setForeground(Color.WHITE);
 		btn.setBackground(buttonFarbe);

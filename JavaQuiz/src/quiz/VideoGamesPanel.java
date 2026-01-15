@@ -47,7 +47,8 @@ public class VideoGamesPanel extends JPanel {
 		add(getBtnBack());
 	}
 
-	private JLabel getLblTitel() {
+	private JLabel getLblTitel() 
+	{
 		if (lblTitel == null) {
 			lblTitel = new JLabel("Video Games Quiz");
 			lblTitel.setForeground(Color.WHITE);
