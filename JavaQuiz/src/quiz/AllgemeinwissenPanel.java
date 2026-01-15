@@ -71,7 +71,7 @@ public class AllgemeinwissenPanel extends JPanel
 			textFieldFrage.setForeground(Color.WHITE);
 			textFieldFrage.setBackground(new Color(45, 55, 75));
 			textFieldFrage.setBorder(new LineBorder(akzentFarbe, 1));
-			textFieldFrage.setBounds(240, 120, 800, 100);
+			textFieldFrage.setBounds(10, 120, 1241, 100);
 		}
 		return textFieldFrage;
 	}
