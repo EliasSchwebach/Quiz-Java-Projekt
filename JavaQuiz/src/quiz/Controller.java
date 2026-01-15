@@ -65,7 +65,7 @@ public class Controller
 		// Splitten und zufallsfrage:
 		alleFragenRoh = fragenJson.split("\\{\"type\":");
 		if (alleFragenRoh.length < 2) {
-			System.out.println("Fehler: JSON Format passt nicht oder keine Fragen vorhanden.");
+			System.out.println("Fehler, JSON Format passt nicht oder keine Fragen vorhanden.");
 			return;
 		}
 

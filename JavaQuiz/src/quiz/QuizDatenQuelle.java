@@ -15,11 +15,11 @@ public class QuizDatenQuelle
 
 		// auswählen
 		if (thema.equals("videogames")) {
-			urlString = "https://opentdb.com/api.php?amount=50&category=15&type=multiple";
+			urlString = "https://opentdb.com/api.php?amount=25&category=15&type=multiple";
 		} else if (thema.equals("filme")) {
-			urlString = "https://opentdb.com/api.php?amount=50&category=11&type=multiple";
+			urlString = "https://opentdb.com/api.php?amount=25&category=11&type=multiple";
 		} else if (thema.equals("allgemeinwissen")) {
-			urlString = "https://opentdb.com/api.php?amount=50&category=9&type=multiple";
+			urlString = "https://opentdb.com/api.php?amount=25&category=9&type=multiple";
 		}
 
 		// Client erstellen
