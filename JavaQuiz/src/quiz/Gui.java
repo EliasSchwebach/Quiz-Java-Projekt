@@ -16,63 +16,37 @@ import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
-import java.awt.Dimension;
 import javax.swing.border.LineBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Gui extends JFrame
 {
-
 	private static final long serialVersionUID = 1L;
-
 	private JPanel contentPane;
-
 	private JLabel lblNewLabel;
-
 	private JLabel lblNewLabel_1;
-
 	private JButton btnAllg;
-
 	private JButton btnVideoGames;
-
 	private JButton btnMovie;
-
 	private Controller controller;
 	private JButton btnAnmelden;
 	private JButton btnAusloggen;
-
-	/**
-	 * 
-	 * Create the frame.
-	 * 
-	 */
+	private JPanel startAnsicht;
 
 	public Gui(Controller controller)
 	{
-
 		setFont(new Font("Cambria", Font.PLAIN, 17));
-
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Gui.class.getResource("/Bilder/Held_der_Steine.jpg")));
-
 		setTitle("JAVA QUIZ VON ELIAS UND MARIAN");
-
 		setBackground(new Color(245, 245, 245));
-
 		try {
-
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-
 		} catch (Exception e) {
-
 			e.printStackTrace();
-
 		}
-
 		initialize();
-
 		this.controller = controller;
-
 	}
 
 	private void initialize()
@@ -91,6 +65,7 @@ public class Gui extends JFrame
 		contentPane.add(getBtnMovie());
 		contentPane.add(getBtnAnmelden());
 		contentPane.add(getBtnAusloggen());
+		this.startAnsicht = (JPanel) this.getContentPane();
 		setVisible(true);
 	}
 
@@ -135,47 +110,30 @@ public class Gui extends JFrame
 
 			btnAllg.addMouseListener(new MouseAdapter()
 			{
-
 				@Override
-
 				public void mouseEntered(MouseEvent e)
 				{
-
 					btnAllg.setBackground(new Color(120, 130, 150));
-
 					btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 					btnAllg.setBounds(70, 240, 480, 180);
-
 				}
 
 				@Override
-
 				public void mouseExited(MouseEvent e)
 				{
-
 					btnAllg.setBackground(new Color(100, 110, 130));
-
 					btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 					btnAllg.setBounds(80, 250, 460, 160);
-
 				}
-
 			});
 
 			btnAllg.addActionListener(e -> {
-
-				controller.loadAllgemeinwissenFragen(); // 1. Daten in fragenJson speichern
-
-				controller.zeigeAllgemeinwissen(); // 2. Panel erstellen und anzeigen
-
+				controller.loadAllgemeinwissenFragen();
+				controller.zeigeAllgemeinwissen();
 			});
-
 		}
 
 		return btnAllg;
-
 	}
 
 	private JButton getBtnVideoGames()
@@ -233,7 +191,7 @@ public class Gui extends JFrame
 			btnMovie.setBounds(394, 471, 460, 160);
 			btnMovie.addMouseListener(new MouseAdapter()
 			{
-				
+
 				@Override
 				public void mouseEntered(MouseEvent e)
 				{
@@ -258,13 +216,6 @@ public class Gui extends JFrame
 		}
 
 		return btnMovie;
-	}
-
-	public void setView(JPanel neuesPanel)
-	{
-		this.setContentPane(neuesPanel);
-		this.revalidate();
-		this.repaint();
 	}
 
 	private JButton getBtnAnmelden()
@@ -297,5 +248,17 @@ public class Gui extends JFrame
 			btnAusloggen.setBounds(964, 62, 290, 40);
 		}
 		return btnAusloggen;
+	}
+
+	public void setView(JPanel neuesPanel)
+	{
+		this.setContentPane(neuesPanel);
+		this.revalidate();
+		this.repaint();
+	}
+
+	public void zeigeHauptmenue()
+	{
+		this.setView(startAnsicht);
 	}
 }

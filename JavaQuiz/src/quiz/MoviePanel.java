@@ -13,7 +13,6 @@ import java.awt.event.MouseEvent;
 
 public class MoviePanel extends JPanel
 {
-
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitel;
 	protected JTextField textFieldFrage;
@@ -22,16 +21,16 @@ public class MoviePanel extends JPanel
 	protected JButton btnAntwort3;
 	protected JButton btnAntwort4;
 	private JButton btnBack;
-
 	private Color bgFarbe = new Color(26, 35, 52);
 	private Color buttonFarbe = new Color(35, 50, 75);
 	private Color hoverFarbe = new Color(50, 70, 100);
 	private Color akzentFarbe = new Color(0, 150, 200);
-
 	private Color backBtnFarbe = new Color(15, 20, 30);
+	private Controller controller;
 
-	public MoviePanel()
+	public MoviePanel(Controller controller)
 	{
+		this.controller = controller;
 		initialize();
 	}
 
@@ -39,9 +38,7 @@ public class MoviePanel extends JPanel
 	{
 		setBackground(bgFarbe);
 		setLayout(null);
-		// Panel größe
 		setBounds(0, 0, 1280, 720);
-
 		add(getLblTitel());
 		add(getTextFieldFrage());
 		add(getBtnAntwort1());
@@ -49,7 +46,6 @@ public class MoviePanel extends JPanel
 		add(getBtnAntwort3());
 		add(getBtnAntwort4());
 		add(getBtnBack());
-		setVisible(true);
 	}
 
 	private JLabel getLblTitel()
@@ -83,15 +79,24 @@ public class MoviePanel extends JPanel
 	protected JButton getBtnAntwort1()
 	{
 		if (btnAntwort1 == null) {
-			btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
-		}
-		return btnAntwort1;
+	        btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
+	        
+	        // prüft antwort ob richtig oder falsch
+	        btnAntwort1.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort1, btnAntwort1.getText(), this);
+	        });
+	    }
+	    return btnAntwort1;
 	}
 
 	protected JButton getBtnAntwort2()
 	{
 		if (btnAntwort2 == null) {
 			btnAntwort2 = styleButton(new JButton("Antwort 2"), 650, 280);
+
+	        btnAntwort2.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort2, btnAntwort2.getText(), this);
+	        });
 		}
 		return btnAntwort2;
 	}
@@ -100,6 +105,10 @@ public class MoviePanel extends JPanel
 	{
 		if (btnAntwort3 == null) {
 			btnAntwort3 = styleButton(new JButton("Antwort 3"), 240, 420);
+
+	        btnAntwort3.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort3, btnAntwort3.getText(), this);
+	        });
 		}
 		return btnAntwort3;
 	}
@@ -108,6 +117,10 @@ public class MoviePanel extends JPanel
 	{
 		if (btnAntwort4 == null) {
 			btnAntwort4 = styleButton(new JButton("Antwort 4"), 650, 420);
+
+	        btnAntwort4.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort4, btnAntwort4.getText(), this);
+	        });
 		}
 		return btnAntwort4;
 	}
@@ -116,10 +129,17 @@ public class MoviePanel extends JPanel
 	{
 		if (btnBack == null) {
 			btnBack = styleBackButton(new JButton("Zurück"), 20, 20);
+
+			btnBack.addActionListener(e -> {
+				if (controller != null) {
+					controller.getGui().zeigeHauptmenue();
+				}
+			});
 		}
 		return btnBack;
 	}
 
+	// Antworten Style
 	private JButton styleButton(JButton btn, int x, int y)
 	{
 		btn.setFont(new Font("Arial", Font.BOLD, 18));
@@ -128,7 +148,6 @@ public class MoviePanel extends JPanel
 		btn.setFocusPainted(false);
 		btn.setBorder(new LineBorder(akzentFarbe, 3, true));
 		btn.setBounds(x, y, 390, 100);
-
 		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 
@@ -162,7 +181,6 @@ public class MoviePanel extends JPanel
 		btn.setFocusPainted(false);
 		btn.setBorder(new LineBorder(akzentFarbe, 2, true));
 		btn.setBounds(x, y, width, height);
-
 		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 

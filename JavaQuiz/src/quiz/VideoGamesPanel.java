@@ -5,7 +5,6 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.Font;
 import java.awt.Color;
@@ -23,17 +22,16 @@ public class VideoGamesPanel extends JPanel
 	protected JButton btnAntwort3;
 	protected JButton btnAntwort4;
 	private JButton btnBack;
-
-	// Farben aus der Haupt-GUI
+	private Controller controller;
 	private Color bgFarbe = new Color(26, 35, 52);
 	private Color buttonFarbe = new Color(35, 50, 75);
 	private Color hoverFarbe = new Color(50, 70, 100);
 	private Color akzentFarbe = new Color(0, 150, 200);
-
 	private Color backBtnFarbe = new Color(15, 20, 30);
 
-	public VideoGamesPanel()
+	public VideoGamesPanel(Controller controller)
 	{
+		this.controller = controller;
 		initialize();
 	}
 
@@ -42,7 +40,6 @@ public class VideoGamesPanel extends JPanel
 		setBackground(bgFarbe);
 		setLayout(null);
 		setBounds(0, 0, 1280, 720);
-
 		add(getLblTitel());
 		add(getTextFieldFrage());
 		add(getBtnAntwort1());
@@ -83,15 +80,24 @@ public class VideoGamesPanel extends JPanel
 	protected JButton getBtnAntwort1()
 	{
 		if (btnAntwort1 == null) {
-			btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
-		}
-		return btnAntwort1;
+	        btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
+	        
+	        // prüft antwort ob richtig oder falsch
+	        btnAntwort1.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort1, btnAntwort1.getText(), this);
+	        });
+	    }
+	    return btnAntwort1;
 	}
 
 	protected JButton getBtnAntwort2()
 	{
 		if (btnAntwort2 == null) {
 			btnAntwort2 = styleButton(new JButton("Antwort 2"), 650, 280);
+
+	        btnAntwort2.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort2, btnAntwort2.getText(), this);
+	        });
 		}
 		return btnAntwort2;
 	}
@@ -100,6 +106,10 @@ public class VideoGamesPanel extends JPanel
 	{
 		if (btnAntwort3 == null) {
 			btnAntwort3 = styleButton(new JButton("Antwort 3"), 240, 420);
+
+	        btnAntwort3.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort3, btnAntwort3.getText(), this);
+	        });
 		}
 		return btnAntwort3;
 	}
@@ -108,18 +118,30 @@ public class VideoGamesPanel extends JPanel
 	{
 		if (btnAntwort4 == null) {
 			btnAntwort4 = styleButton(new JButton("Antwort 4"), 650, 420);
+
+	        btnAntwort4.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort4, btnAntwort4.getText(), this);
+	        });
 		}
 		return btnAntwort4;
 	}
+
 
 	private JButton getBtnBack()
 	{
 		if (btnBack == null) {
 			btnBack = styleBackButton(new JButton("Zurück"), 20, 20);
+
+			btnBack.addActionListener(e -> {
+				if (controller != null) {
+					controller.getGui().zeigeHauptmenue();
+				}
+			});
 		}
 		return btnBack;
 	}
 
+	// Antworten Style
 	private JButton styleButton(JButton btn, int x, int y)
 	{
 		btn.setFont(new Font("Arial", Font.BOLD, 18));
@@ -162,7 +184,6 @@ public class VideoGamesPanel extends JPanel
 		btn.setFocusPainted(false);
 		btn.setBorder(new LineBorder(akzentFarbe, 2, true));
 		btn.setBounds(x, y, width, height);
-
 		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 

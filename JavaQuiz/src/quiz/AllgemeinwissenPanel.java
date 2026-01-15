@@ -25,12 +25,13 @@ public class AllgemeinwissenPanel extends JPanel
 	private Color buttonFarbe = new Color(35, 50, 75);
 	private Color hoverFarbe = new Color(50, 70, 100);
 	private Color akzentFarbe = new Color(0, 150, 200);
-
 	private Color backBtnFarbe = new Color(15, 20, 30);
+	private Controller controller;
 
-	public AllgemeinwissenPanel()
+	public AllgemeinwissenPanel(Controller controller) 
 	{
-		initialize();
+	    this.controller = controller;
+	    initialize();
 	}
 
 	private void initialize()
@@ -78,15 +79,24 @@ public class AllgemeinwissenPanel extends JPanel
 	protected JButton getBtnAntwort1()
 	{
 		if (btnAntwort1 == null) {
-			btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
-		}
-		return btnAntwort1;
+	        btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
+	        
+	        // prüft antwort ob richtig oder falsch
+	        btnAntwort1.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort1, btnAntwort1.getText(), this);
+	        });
+	    }
+	    return btnAntwort1;
 	}
 
 	protected JButton getBtnAntwort2()
 	{
 		if (btnAntwort2 == null) {
 			btnAntwort2 = styleButton(new JButton("Antwort 2"), 650, 280);
+
+	        btnAntwort2.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort2, btnAntwort2.getText(), this);
+	        });
 		}
 		return btnAntwort2;
 	}
@@ -95,6 +105,10 @@ public class AllgemeinwissenPanel extends JPanel
 	{
 		if (btnAntwort3 == null) {
 			btnAntwort3 = styleButton(new JButton("Antwort 3"), 240, 420);
+
+	        btnAntwort3.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort3, btnAntwort3.getText(), this);
+	        });
 		}
 		return btnAntwort3;
 	}
@@ -103,6 +117,10 @@ public class AllgemeinwissenPanel extends JPanel
 	{
 		if (btnAntwort4 == null) {
 			btnAntwort4 = styleButton(new JButton("Antwort 4"), 650, 420);
+
+	        btnAntwort4.addActionListener(e -> {
+	            controller.pruefeAntwort(btnAntwort4, btnAntwort4.getText(), this);
+	        });
 		}
 		return btnAntwort4;
 	}
@@ -111,39 +129,42 @@ public class AllgemeinwissenPanel extends JPanel
 	{
 		if (btnBack == null) {
 			btnBack = styleBackButton(new JButton("Zurück"), 20, 20);
+
+			// DAS EVENT:
+			btnBack.addActionListener(e -> {
+				controller.getGui().zeigeHauptmenue();
+			});
 		}
 		return btnBack;
 	}
 
 	// Antworten Style
-	private JButton styleButton(JButton btn, int x, int y)
-	{
-		btn.setFont(new Font("Arial", Font.BOLD, 18));
-		btn.setForeground(Color.WHITE);
-		btn.setBackground(buttonFarbe);
-		btn.setFocusPainted(false);
-		btn.setBorder(new LineBorder(akzentFarbe, 3, true));
-		btn.setBounds(x, y, 390, 100);
-		btn.setContentAreaFilled(false);
-		btn.setOpaque(true);
+	private JButton styleButton(JButton btn, int x, int y) {
+	    btn.setFont(new Font("Arial", Font.BOLD, 18));
+	    btn.setForeground(Color.WHITE);
+	    btn.setBackground(buttonFarbe);
+	    btn.setFocusPainted(false);
+	    btn.setBorder(new LineBorder(akzentFarbe, 3, true));
+	    btn.setBounds(x, y, 390, 100);
+	    btn.setContentAreaFilled(false);
+	    btn.setOpaque(true);
 
-		btn.addMouseListener(new MouseAdapter()
-		{
-			@Override
-			public void mouseEntered(MouseEvent e)
-			{
-				btn.setBackground(hoverFarbe);
-				btn.setBounds(x - 5, y - 5, 400, 110);
-			}
-
-			@Override
-			public void mouseExited(MouseEvent e)
-			{
-				btn.setBackground(buttonFarbe);
-				btn.setBounds(x, y, 390, 100);
-			}
-		});
-		return btn;
+	    btn.addMouseListener(new MouseAdapter() {
+	        @Override
+	        public void mouseEntered(MouseEvent e) {
+	            // Nur highlighten, wenn der Button noch nicht "ausgewertet" wurde
+	            if (btn.getBackground().equals(buttonFarbe)) {
+	                btn.setBackground(hoverFarbe);
+	            }
+	        }
+	        @Override
+	        public void mouseExited(MouseEvent e) {
+	            if (btn.getBackground().equals(hoverFarbe)) {
+	                btn.setBackground(buttonFarbe);
+	            }
+	        }
+	    });
+	    return btn;
 	}
 
 	// zurück Style
