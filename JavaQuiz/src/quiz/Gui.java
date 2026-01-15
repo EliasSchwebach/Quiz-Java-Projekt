@@ -20,7 +20,9 @@ import java.awt.Dimension;
 import javax.swing.border.LineBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-public class Gui extends JFrame {
+
+public class Gui extends JFrame
+{
 
 	private static final long serialVersionUID = 1L;
 
@@ -46,7 +48,8 @@ public class Gui extends JFrame {
 	 * 
 	 */
 
-	public Gui(Controller controller) {
+	public Gui(Controller controller)
+	{
 
 		setFont(new Font("Cambria", Font.PLAIN, 17));
 
@@ -72,105 +75,71 @@ public class Gui extends JFrame {
 
 	}
 
-	private void initialize() {
-
+	private void initialize()
+	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 		setBounds(100, 100, 1280, 720);
-
 		contentPane = new JPanel();
-
 		contentPane.setBackground(new Color(26, 35, 52));
-
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
 		setContentPane(contentPane);
-
 		contentPane.setLayout(null);
-
 		contentPane.add(getLblNewLabel());
-
 		contentPane.add(getLblNewLabel_1());
-
 		contentPane.add(getBtnAllg());
-
 		contentPane.add(getBtnVideoGames());
-
 		contentPane.add(getBtnMovie());
 		contentPane.add(getBtnAnmelden());
 		contentPane.add(getBtnAusloggen());
-
 		setVisible(true);
-
 	}
 
-	private JLabel getLblNewLabel() {
-
+	private JLabel getLblNewLabel()
+	{
 		if (lblNewLabel == null) {
-
 			lblNewLabel = new JLabel("Java Quiz Game");
-
 			lblNewLabel.setForeground(Color.WHITE);
-
 			lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-
 			lblNewLabel.setFont(new Font("Arial", Font.BOLD, 48));
-
 			lblNewLabel.setBounds(340, 40, 600, 60);
-
 		}
 
 		return lblNewLabel;
-
 	}
 
-	private JLabel getLblNewLabel_1() {
-
+	private JLabel getLblNewLabel_1()
+	{
 		if (lblNewLabel_1 == null) {
-
 			lblNewLabel_1 = new JLabel("Themen Gebiet Aussuchen");
-
 			lblNewLabel_1.setForeground(new Color(160, 170, 190));
-
 			lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-
 			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 24));
-
 			lblNewLabel_1.setBounds(340, 110, 600, 40);
-
 		}
 
 		return lblNewLabel_1;
-
 	}
 
-	private JButton getBtnAllg() {
-
+	private JButton getBtnAllg()
+	{
 		if (btnAllg == null) {
-
 			btnAllg = new JButton("Allgemein Wissen");
-
 			btnAllg.setFont(new Font("Arial", Font.BOLD, 22));
-
 			btnAllg.setForeground(Color.WHITE);
-
 			btnAllg.setContentAreaFilled(false);
 			btnAllg.setOpaque(false);
 			btnAllg.setBackground(new Color(35, 50, 75));
-
 			btnAllg.setFocusPainted(false);
-
 			btnAllg.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 			btnAllg.setBounds(80, 250, 460, 160);
 
-// Hover-Effekt mit Größenänderung 
-
-			btnAllg.addMouseListener(new MouseAdapter() {
+			btnAllg.addMouseListener(new MouseAdapter()
+			{
 
 				@Override
 
-				public void mouseEntered(MouseEvent e) {
+				public void mouseEntered(MouseEvent e)
+				{
 
 					btnAllg.setBackground(new Color(120, 130, 150));
 
@@ -182,7 +151,8 @@ public class Gui extends JFrame {
 
 				@Override
 
-				public void mouseExited(MouseEvent e) {
+				public void mouseExited(MouseEvent e)
+				{
 
 					btnAllg.setBackground(new Color(100, 110, 130));
 
@@ -208,142 +178,99 @@ public class Gui extends JFrame {
 
 	}
 
-	private JButton getBtnVideoGames() {
-
+	private JButton getBtnVideoGames()
+	{
 		if (btnVideoGames == null) {
-
 			btnVideoGames = new JButton("Video Games");
-
 			btnVideoGames.setFont(new Font("Arial", Font.BOLD, 22));
-
 			btnVideoGames.setForeground(Color.WHITE);
-
 			btnVideoGames.setContentAreaFilled(false);
 			btnVideoGames.setOpaque(false);
-
 			btnVideoGames.setBackground(new Color(35, 50, 75));
-
 			btnVideoGames.setFocusPainted(false);
-
 			btnVideoGames.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 			btnVideoGames.setBounds(740, 250, 460, 160);
-
-// Hover-Effekt mit Größenänderung 
-
-			btnVideoGames.addMouseListener(new MouseAdapter() {
-
+			btnVideoGames.addMouseListener(new MouseAdapter()
+			{
 				@Override
-
-				public void mouseEntered(MouseEvent e) {
-
+				public void mouseEntered(MouseEvent e)
+				{
 					btnVideoGames.setBackground(new Color(50, 70, 100));
-
 					btnVideoGames.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
-
 					btnVideoGames.setBounds(730, 240, 480, 180);
-
 				}
 
 				@Override
 
-				public void mouseExited(MouseEvent e) {
-
+				public void mouseExited(MouseEvent e)
+				{
 					btnVideoGames.setBackground(new Color(35, 50, 75));
-
 					btnVideoGames.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 					btnVideoGames.setBounds(740, 250, 460, 160);
-
 				}
-
 			});
 
 			btnVideoGames.addActionListener(e -> {
-
 				controller.loadVideoGamesFragen();
-
 				controller.zeigeVideoGames();
-
 			});
-
 		}
 
 		return btnVideoGames;
-
 	}
 
-	private JButton getBtnMovie() {
-
+	private JButton getBtnMovie()
+	{
 		if (btnMovie == null) {
-
 			btnMovie = new JButton("Filme");
-
 			btnMovie.setFont(new Font("Arial", Font.BOLD, 22));
-
 			btnMovie.setForeground(Color.WHITE);
-
 			btnMovie.setBackground(new Color(35, 50, 75));
 			btnMovie.setContentAreaFilled(false);
 			btnMovie.setOpaque(false);
-
 			btnMovie.setFocusPainted(false);
-
 			btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-
 			btnMovie.setBounds(394, 471, 460, 160);
-
-// Hover-Effekt mit Größenänderung 
-
-			btnMovie.addMouseListener(new MouseAdapter() {
+			btnMovie.addMouseListener(new MouseAdapter()
+			{
+				
+				@Override
+				public void mouseEntered(MouseEvent e)
+				{
+					btnMovie.setBackground(new Color(50, 70, 100));
+					btnMovie.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
+					btnMovie.setBounds(384, 461, 480, 180);
+				}
 
 				@Override
-			    public void mouseEntered(MouseEvent e) {
-			        btnMovie.setBackground(new Color(50, 70, 100));
-			        btnMovie.setBorder(new LineBorder(new Color(0, 180, 230), 4, true));
-			        btnMovie.setBounds(384, 461, 480, 180); 
-			    }
-
-			    @Override
-			    public void mouseExited(MouseEvent e) {
-			        btnMovie.setBackground(new Color(35, 50, 75));
-			        btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-			        btnMovie.setBounds(394, 471, 460, 160);
-			    }
-
+				public void mouseExited(MouseEvent e)
+				{
+					btnMovie.setBackground(new Color(35, 50, 75));
+					btnMovie.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+					btnMovie.setBounds(394, 471, 460, 160);
+				}
 			});
 
 			btnMovie.addActionListener(e -> {
-
 				controller.loadMovieFragen();
-
 				controller.zeigeMovie();
-
 			});
-
 		}
 
 		return btnMovie;
-
 	}
 
-	public void setView(JPanel neuesPanel) {
-
+	public void setView(JPanel neuesPanel)
+	{
 		this.setContentPane(neuesPanel);
-
 		this.revalidate();
-
 		this.repaint();
-
 	}
 
-	private JButton getBtnAnmelden() {
+	private JButton getBtnAnmelden()
+	{
 		if (btnAnmelden == null) {
 			btnAnmelden = new JButton("Anmelden");
-			btnAnmelden.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-				}
-			});
 			btnAnmelden.setOpaque(false);
 			btnAnmelden.setForeground(Color.WHITE);
 			btnAnmelden.setFont(new Font("Arial", Font.BOLD, 22));
@@ -355,7 +282,9 @@ public class Gui extends JFrame {
 		}
 		return btnAnmelden;
 	}
-	private JButton getBtnAusloggen() {
+
+	private JButton getBtnAusloggen()
+	{
 		if (btnAusloggen == null) {
 			btnAusloggen = new JButton("Ausloggen");
 			btnAusloggen.setOpaque(false);

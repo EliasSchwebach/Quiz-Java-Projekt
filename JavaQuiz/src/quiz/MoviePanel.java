@@ -11,7 +11,8 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class MoviePanel extends JPanel {
+public class MoviePanel extends JPanel
+{
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblTitel;
@@ -22,20 +23,23 @@ public class MoviePanel extends JPanel {
 	protected JButton btnAntwort4;
 	private JButton btnBack;
 
-	// Farben exakt wie in deiner Vorlage
 	private Color bgFarbe = new Color(26, 35, 52);
 	private Color buttonFarbe = new Color(35, 50, 75);
 	private Color hoverFarbe = new Color(50, 70, 100);
 	private Color akzentFarbe = new Color(0, 150, 200);
 
-	public MoviePanel() {
+	private Color backBtnFarbe = new Color(15, 20, 30);
+
+	public MoviePanel()
+	{
 		initialize();
 	}
 
-	private void initialize() {
+	private void initialize()
+	{
 		setBackground(bgFarbe);
 		setLayout(null);
-		// Panel-Größe an die GUI anpassen (1280x720)
+		// Panel größe
 		setBounds(0, 0, 1280, 720);
 
 		add(getLblTitel());
@@ -48,7 +52,8 @@ public class MoviePanel extends JPanel {
 		setVisible(true);
 	}
 
-	private JLabel getLblTitel() {
+	private JLabel getLblTitel()
+	{
 		if (lblTitel == null) {
 			lblTitel = new JLabel("Filme & Serien Quiz");
 			lblTitel.setForeground(Color.WHITE);
@@ -59,7 +64,8 @@ public class MoviePanel extends JPanel {
 		return lblTitel;
 	}
 
-	protected JTextField getTextFieldFrage() {
+	protected JTextField getTextFieldFrage()
+	{
 		if (textFieldFrage == null) {
 			textFieldFrage = new JTextField();
 			textFieldFrage.setEditable(false);
@@ -74,48 +80,44 @@ public class MoviePanel extends JPanel {
 		return textFieldFrage;
 	}
 
-	protected JButton getBtnAntwort1() {
+	protected JButton getBtnAntwort1()
+	{
 		if (btnAntwort1 == null) {
 			btnAntwort1 = styleButton(new JButton("Antwort 1"), 240, 280);
 		}
 		return btnAntwort1;
 	}
 
-	protected JButton getBtnAntwort2() {
+	protected JButton getBtnAntwort2()
+	{
 		if (btnAntwort2 == null) {
 			btnAntwort2 = styleButton(new JButton("Antwort 2"), 650, 280);
 		}
 		return btnAntwort2;
 	}
 
-	protected JButton getBtnAntwort3() {
+	protected JButton getBtnAntwort3()
+	{
 		if (btnAntwort3 == null) {
 			btnAntwort3 = styleButton(new JButton("Antwort 3"), 240, 420);
 		}
 		return btnAntwort3;
 	}
 
-	protected JButton getBtnAntwort4() {
+	protected JButton getBtnAntwort4()
+	{
 		if (btnAntwort4 == null) {
 			btnAntwort4 = styleButton(new JButton("Antwort 4"), 650, 420);
 		}
 		return btnAntwort4;
 	}
 
-	private JButton getBtnBack() {
-	    if (btnBack == null) {
-	        btnBack = new JButton("Zurück");
-	        btnBack.setBounds(20, 20, 100, 30);
-	        btnBack.setFont(new Font("Arial", Font.PLAIN, 14));
-	        btnBack.setForeground(Color.WHITE);
-	        btnBack.setBackground(new Color(60, 70, 90));
-	        btnBack.setOpaque(true);
-	        btnBack.setContentAreaFilled(true); 
-	        btnBack.setBorderPainted(true);
-	        btnBack.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
-	        btnBack.setFocusPainted(false);
-	    }
-	    return btnBack;
+	private JButton getBtnBack()
+	{
+		if (btnBack == null) {
+			btnBack = styleBackButton(new JButton("Zurück"), 20, 20);
+		}
+		return btnBack;
 	}
 
 	private JButton styleButton(JButton btn, int x, int y)
@@ -126,24 +128,44 @@ public class MoviePanel extends JPanel {
 		btn.setFocusPainted(false);
 		btn.setBorder(new LineBorder(akzentFarbe, 3, true));
 		btn.setBounds(x, y, 390, 100);
-		
-		// Windows-Farbfix
+
 		btn.setContentAreaFilled(false);
 		btn.setOpaque(true);
 
-		btn.addMouseListener(new MouseAdapter() {
+		btn.addMouseListener(new MouseAdapter()
+		{
 			@Override
-			public void mouseEntered(MouseEvent e) {
+			public void mouseEntered(MouseEvent e)
+			{
 				btn.setBackground(hoverFarbe);
 				btn.setBounds(x - 5, y - 5, 400, 110);
 			}
 
 			@Override
-			public void mouseExited(MouseEvent e) {
+			public void mouseExited(MouseEvent e)
+			{
 				btn.setBackground(buttonFarbe);
 				btn.setBounds(x, y, 390, 100);
 			}
 		});
+		return btn;
+	}
+
+	private JButton styleBackButton(JButton btn, int x, int y)
+	{
+		int width = 120;
+		int height = 45;
+
+		btn.setFont(new Font("Arial", Font.BOLD, 14));
+		btn.setForeground(Color.WHITE);
+		btn.setBackground(backBtnFarbe);
+		btn.setFocusPainted(false);
+		btn.setBorder(new LineBorder(akzentFarbe, 2, true));
+		btn.setBounds(x, y, width, height);
+
+		btn.setContentAreaFilled(false);
+		btn.setOpaque(true);
+
 		return btn;
 	}
 }
