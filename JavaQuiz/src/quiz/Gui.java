@@ -1,45 +1,25 @@
 package quiz;
 
 import java.awt.BorderLayout;
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-
 import javax.swing.JPanel;
-
 import javax.swing.UIManager;
-
 import javax.swing.border.EmptyBorder;
-
 import javax.swing.JLabel;
-
 import java.awt.Font;
-
 import javax.swing.JButton;
-
 import java.awt.Color;
-
 import java.awt.Window.Type;
-
 import java.awt.Dialog.ModalExclusionType;
-
 import java.awt.Toolkit;
-
 import java.awt.event.ActionListener;
-
 import java.awt.event.ActionEvent;
-
 import javax.swing.SwingConstants;
-
 import java.awt.Dimension;
-
 import javax.swing.border.LineBorder;
-
 import java.awt.event.MouseAdapter;
-
 import java.awt.event.MouseEvent;
-
 public class Gui extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -171,9 +151,9 @@ public class Gui extends JFrame {
 			btnAllg.setFont(new Font("Arial", Font.BOLD, 22));
 
 			btnAllg.setForeground(Color.WHITE);
-			
-			btnAllg.setContentAreaFilled(false); 
-			btnAllg.setOpaque(false);             
+
+			btnAllg.setContentAreaFilled(false);
+			btnAllg.setOpaque(false);
 			btnAllg.setBackground(new Color(35, 50, 75));
 
 			btnAllg.setFocusPainted(false);
@@ -235,9 +215,9 @@ public class Gui extends JFrame {
 			btnVideoGames.setFont(new Font("Arial", Font.BOLD, 22));
 
 			btnVideoGames.setForeground(Color.WHITE);
-			
-			btnVideoGames.setContentAreaFilled(false); 
-			btnVideoGames.setOpaque(false);      
+
+			btnVideoGames.setContentAreaFilled(false);
+			btnVideoGames.setOpaque(false);
 
 			btnVideoGames.setBackground(new Color(35, 50, 75));
 
@@ -302,8 +282,8 @@ public class Gui extends JFrame {
 			btnMovie.setForeground(Color.WHITE);
 
 			btnMovie.setBackground(new Color(35, 50, 75));
-			btnMovie.setContentAreaFilled(false); 
-			btnMovie.setOpaque(false);      
+			btnMovie.setContentAreaFilled(false);
+			btnMovie.setOpaque(false);
 
 			btnMovie.setFocusPainted(false);
 
@@ -342,7 +322,6 @@ public class Gui extends JFrame {
 			});
 
 			btnMovie.addActionListener(e -> {
-
 
 				controller.loadMovieFragen();
 
