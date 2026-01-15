@@ -67,7 +67,7 @@ public class AllgemeinwissenPanel extends JPanel
 			textFieldFrage.setEditable(false);
 			textFieldFrage.setText("Hier steht die Frage?");
 			textFieldFrage.setHorizontalAlignment(SwingConstants.CENTER);
-			textFieldFrage.setFont(new Font("Arial", Font.PLAIN, 22));
+			textFieldFrage.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 20));
 			textFieldFrage.setForeground(Color.WHITE);
 			textFieldFrage.setBackground(new Color(45, 55, 75));
 			textFieldFrage.setBorder(new LineBorder(akzentFarbe, 1));
