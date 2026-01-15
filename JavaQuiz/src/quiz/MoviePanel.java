@@ -103,19 +103,19 @@ public class MoviePanel extends JPanel {
 	}
 
 	private JButton getBtnBack() {
-		if (btnBack == null) {
-			btnBack = new JButton("Zurück");
-			btnBack.setFont(new Font("Arial", Font.BOLD, 14));
-			btnBack.setForeground(Color.WHITE);
-			btnBack.setContentAreaFilled(false); 
-			btnBack.setOpaque(false);
-			btnBack.setBackground(new Color(80, 40, 40)); 
-			btnBack.setBorder(new LineBorder(Color.GRAY, 1));
-			btnBack.setFocusPainted(false);
-			btnBack.setBounds(20, 20, 120, 40);
-			
-		}
-		return btnBack;
+	    if (btnBack == null) {
+	        btnBack = new JButton("Zurück");
+	        btnBack.setBounds(20, 20, 100, 30);
+	        btnBack.setFont(new Font("Arial", Font.PLAIN, 14));
+	        btnBack.setForeground(Color.WHITE);
+	        btnBack.setBackground(new Color(60, 70, 90));
+	        btnBack.setOpaque(true);
+	        btnBack.setContentAreaFilled(true); 
+	        btnBack.setBorderPainted(true);
+	        btnBack.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+	        btnBack.setFocusPainted(false);
+	    }
+	    return btnBack;
 	}
 
 	private JButton styleButton(JButton btn, int x, int y)
