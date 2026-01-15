@@ -36,7 +36,6 @@ public class VideoGamesPanel extends JPanel {
 	private void initialize() {
 		setBackground(bgFarbe);
 		setLayout(null);
-		// Panel-Größe an die GUI anpassen (1280x720)
 		setBounds(0, 0, 1280, 720);
 
 		add(getLblTitel());
@@ -107,7 +106,7 @@ public class VideoGamesPanel extends JPanel {
 			btnBack = new JButton("Zurück");
 			btnBack.setFont(new Font("Arial", Font.BOLD, 14));
 			btnBack.setForeground(Color.WHITE);
-			btnBack.setBackground(new Color(80, 40, 40)); // Etwas rötlicher für "Abbruch"
+			btnBack.setBackground(new Color(80, 40, 40)); 
 			btnBack.setBorder(new LineBorder(Color.GRAY, 1));
 			btnBack.setFocusPainted(false);
 			btnBack.setBounds(20, 20, 120, 40);
