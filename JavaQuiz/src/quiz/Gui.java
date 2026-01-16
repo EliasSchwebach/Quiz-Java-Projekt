@@ -41,16 +41,6 @@ public class Gui extends JFrame
 	// icons laden für performance:
 	private ImageIcon iconHell = new ImageIcon(Gui.class.getResource("/Bilder/hell.png"));
 	private ImageIcon iconDunkel = new ImageIcon(Gui.class.getResource("/Bilder/dunkel.png"));
-	// Farbschema:
-	// Dark Mode:
-	private Color darkBG = new Color(26, 35, 52);
-	private Color darkText = Color.WHITE;
-	private Color darkSubText = new Color(160, 170, 190);
-
-	// Light Mode
-	private Color lightBG = new Color(100, 100, 100);
-	private Color lightText = new Color(10, 20, 30);
-	private Color lightSubText = new Color(40, 50, 50);
 
 	public Gui(Controller controller)
 	{
@@ -84,7 +74,6 @@ public class Gui extends JFrame
 		contentPane.add(getBtnAnmelden());
 		contentPane.add(getBtnAusloggen());
 		this.startAnsicht = (JPanel) this.getContentPane();
-		contentPane.add(getLblHelligkeit());
 		setVisible(true);
 	}
 
@@ -283,42 +272,5 @@ public class Gui extends JFrame
 	public void zeigeHauptmenue()
 	{
 		this.setView(startAnsicht);
-	}
-
-	private JLabel getLblHelligkeit() {
-	    if (lblHelligkeit == null) {
-	        lblHelligkeit = new JLabel("");
-	        lblHelligkeit.setHorizontalAlignment(SwingConstants.CENTER);
-	        lblHelligkeit.setToolTipText("Drücken, um die Darstellung zu wechseln");
-	        lblHelligkeit.setIcon(new ImageIcon(Gui.class.getResource("/Bilder/dunkel.png")));
-	        lblHelligkeit.setBounds(40, 40, 41, 40);
-
-	        lblHelligkeit.addMouseListener(new MouseAdapter() {
-	            @Override
-	            public void mouseClicked(MouseEvent e) {
-	                istHell = !istHell;
-	                
-	                //Icon tauschen
-	                String bildPfad = istHell ? "/Bilder/hell.png" : "/Bilder/dunkel.png";
-	                lblHelligkeit.setIcon(new ImageIcon(Gui.class.getResource(bildPfad)));
-
-	                // Farben aktualisieren
-	                updateTheme();
-	            }
-	        });
-	    }
-	    return lblHelligkeit;
-	}
-	
-	private void updateTheme() {
-	    Color bg = istHell ? lightBG : darkBG;
-	    Color txt = istHell ? lightText : darkText;
-	    Color subTxt = istHell ? lightSubText : darkSubText;
-	    
-	    contentPane.setBackground(bg);
-	    
-	    if (lblNewLabel != null) lblNewLabel.setForeground(txt);
-	    if (lblNewLabel_1 != null) lblNewLabel_1.setForeground(subTxt);
-	    this.repaint();
 	}
 }

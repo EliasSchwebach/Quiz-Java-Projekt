@@ -166,9 +166,4 @@ public class Controller
 	    timer.setRepeats(false);
 	    timer.start();
 	}
-	
-	public void themeWechsel()
-	{
-		this.gui.setBackground(Color.DARK_GRAY);
-	}
 }
