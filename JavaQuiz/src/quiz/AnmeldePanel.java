@@ -29,6 +29,7 @@ public class AnmeldePanel extends JPanel {
 		setBackground(new Color(26, 35, 52));
 		setBounds(0, 0, 1280, 720);
 		initialize();
+		
 	}
 	
 

@@ -12,6 +12,7 @@ public class Controller {
 	private String fragenJson;
 	private String[] alleFragenRoh;
 	private String aktuelleRichtigeAntwort;
+	
 
 	public Controller() {
 		this.gui = new Gui(this);
