@@ -38,9 +38,6 @@ public class Gui extends JFrame
 	private JPanel startAnsicht;
 	private JLabel lblHelligkeit;
 	private boolean istHell = false;
-	// icons laden für performance:
-	private ImageIcon iconHell = new ImageIcon(Gui.class.getResource("/Bilder/hell.png"));
-	private ImageIcon iconDunkel = new ImageIcon(Gui.class.getResource("/Bilder/dunkel.png"));
 
 	public Gui(Controller controller)
 	{
