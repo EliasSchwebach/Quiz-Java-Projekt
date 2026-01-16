@@ -33,6 +33,12 @@ public class Controller
 	{
 		fragenJson = QuizDatenQuelle.getFragen("filme");
 	}
+	
+	public void zeigeAnmelden()
+	{
+		AnmeldePanel meinPanel = new AnmeldePanel(this);
+		this.gui.setView(meinPanel);
+	}
 
 	public void zeigeAllgemeinwissen()
 	{

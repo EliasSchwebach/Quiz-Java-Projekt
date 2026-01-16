@@ -230,19 +230,26 @@ public class Gui extends JFrame
 
 	private JButton getBtnAnmelden()
 	{
-		if (btnAnmelden == null) {
-			btnAnmelden = new JButton("Anmelden");
-			btnAnmelden.setToolTipText("Anmelden um den Punktestand zu sehen");
-			btnAnmelden.setOpaque(false);
-			btnAnmelden.setForeground(Color.WHITE);
-			btnAnmelden.setFont(new Font("Arial", Font.BOLD, 22));
-			btnAnmelden.setFocusPainted(false);
-			btnAnmelden.setContentAreaFilled(false);
-			btnAnmelden.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
-			btnAnmelden.setBackground(new Color(35, 50, 75));
-			btnAnmelden.setBounds(900, 44, 142, 71);
-		}
-		return btnAnmelden;
+	    if (btnAnmelden == null) {
+	        btnAnmelden = new JButton("Anmelden");
+	        btnAnmelden.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                controller.zeigeAnmelden(); 
+	            }
+	        });
+	       
+	        
+	        btnAnmelden.setToolTipText("Anmelden um den Punktestand zu sehen");
+	        btnAnmelden.setOpaque(false);
+	        btnAnmelden.setForeground(Color.WHITE);
+	        btnAnmelden.setFont(new Font("Arial", Font.BOLD, 22));
+	        btnAnmelden.setFocusPainted(false);
+	        btnAnmelden.setContentAreaFilled(false);
+	        btnAnmelden.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
+	        btnAnmelden.setBackground(new Color(35, 50, 75));
+	        btnAnmelden.setBounds(900, 44, 142, 71);
+	    }
+	    return btnAnmelden;
 	}
 
 	private JButton getBtnAusloggen()
