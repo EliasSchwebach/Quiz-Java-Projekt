@@ -7,56 +7,47 @@ import java.util.Collections;
 import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 
-public class Controller
-{
+public class Controller {
 	private Gui gui;
 	private String fragenJson;
 	private String[] alleFragenRoh;
 	private String aktuelleRichtigeAntwort;
 
-	public Controller()
-	{
+	public Controller() {
 		this.gui = new Gui(this);
 	}
 
-	public void loadAllgemeinwissenFragen()
-	{
+	public void loadAllgemeinwissenFragen() {
 		fragenJson = QuizDatenQuelle.getFragen("allgemeinwissen");
 	}
 
-	public void loadVideoGamesFragen()
-	{
+	public void loadVideoGamesFragen() {
 		fragenJson = QuizDatenQuelle.getFragen("videogames");
 	}
 
-	public void loadMovieFragen()
-	{
+	public void loadMovieFragen() {
 		fragenJson = QuizDatenQuelle.getFragen("filme");
 	}
 
-	public void zeigeAllgemeinwissen()
-	{
+	public void zeigeAllgemeinwissen() {
 		AllgemeinwissenPanel meinPanel = new AllgemeinwissenPanel(this);
 		fuellePanelMitZufallsFrage(meinPanel);
 		this.gui.setView(meinPanel);
 	}
 
-	public void zeigeVideoGames()
-	{
+	public void zeigeVideoGames() {
 		VideoGamesPanel meinPanel = new VideoGamesPanel(this);
 		fuellePanelMitZufallsFrage(meinPanel);
 		this.gui.setView(meinPanel);
 	}
 
-	public void zeigeMovie()
-	{
+	public void zeigeMovie() {
 		MoviePanel meinPanel = new MoviePanel(this);
 		fuellePanelMitZufallsFrage(meinPanel);
 		this.gui.setView(meinPanel);
 	}
 
-	private void fuellePanelMitZufallsFrage(Object panel)
-	{
+	private void fuellePanelMitZufallsFrage(Object panel) {
 		if (fragenJson == null || fragenJson.isEmpty() || !fragenJson.contains("question")) {
 			System.out.println("Fehler: Keine Fragen geladen!");
 			return;
@@ -124,8 +115,7 @@ public class Controller
 		}
 	}
 
-	private String extrahiere(String text, String start, String ende)
-	{
+	private String extrahiere(String text, String start, String ende) {
 		try {
 			int s = text.indexOf(start) + start.length();
 			int e = text.indexOf(ende, s);
@@ -135,35 +125,69 @@ public class Controller
 		}
 	}
 
-	private String säubere(String t)
-	{
+	private String säubere(String t) {
 		return t.replace("&quot;", "\"").replace("&#039;", "'").replace("&amp;", "&");
 	}
 
-	public Gui getGui()
-	{
+	public Gui getGui() {
 		return this.gui;
 	}
 
 	public void pruefeAntwort(JButton geklickterButton, String gewaehlteAntwort, Object aktuellesPanel) {
-	    if (gewaehlteAntwort.equals(aktuelleRichtigeAntwort)) {
-	        // Richtig!
-	        geklickterButton.setBackground(new Color(46, 204, 113)); // Schönes Grün
-	        geklickterButton.setBorder(new LineBorder(Color.GREEN, 4, true));
-	    } else {
-	        // Falsch!
-	        geklickterButton.setBackground(new Color(231, 76, 60)); // Schönes Rot
-	        geklickterButton.setBorder(new LineBorder(Color.RED, 4, true));
-	        // Optional: Zeige dem Nutzer auch die richtige Antwort kurz an
-	    }
+		if (gewaehlteAntwort.equals(aktuelleRichtigeAntwort)) {
+			// Richtig
+			geklickterButton.setBackground(new Color(46, 204, 113));
+			geklickterButton.setBorder(new LineBorder(new Color(39, 174, 96), 4, true));
+		} else {
+			// Falsch
+			geklickterButton.setBackground(new Color(231, 76, 60));
+			geklickterButton.setBorder(new LineBorder(new Color(192, 57, 43), 4, true));
 
-	    // Kurze Pause (1 Sekunde), dann nächste Frage laden
-	    javax.swing.Timer timer = new javax.swing.Timer(1200, e -> {
-	        if (aktuellesPanel instanceof AllgemeinwissenPanel) zeigeAllgemeinwissen();
-	        else if (aktuellesPanel instanceof MoviePanel) zeigeMovie();
-	        else if (aktuellesPanel instanceof VideoGamesPanel) zeigeVideoGames();
-	    });
-	    timer.setRepeats(false);
-	    timer.start();
+			markiereRichtigenButton(aktuellesPanel);
+		}
+
+		// Timer starten
+		javax.swing.Timer timer = new javax.swing.Timer(1650, e -> {
+			if (aktuellesPanel instanceof AllgemeinwissenPanel)
+				zeigeAllgemeinwissen();
+			else if (aktuellesPanel instanceof MoviePanel)
+				zeigeMovie();
+			else if (aktuellesPanel instanceof VideoGamesPanel)
+				zeigeVideoGames();
+		});
+		timer.setRepeats(false);
+		timer.start();
+	}
+
+	private void markiereRichtigenButton(Object panel) {
+		JButton[] buttons = new JButton[4];
+
+		if (panel instanceof AllgemeinwissenPanel) {
+			AllgemeinwissenPanel p = (AllgemeinwissenPanel) panel;
+			buttons[0] = p.btnAntwort1;
+			buttons[1] = p.btnAntwort2;
+			buttons[2] = p.btnAntwort3;
+			buttons[3] = p.btnAntwort4;
+		} else if (panel instanceof MoviePanel) {
+			MoviePanel p = (MoviePanel) panel;
+			buttons[0] = p.btnAntwort1;
+			buttons[1] = p.btnAntwort2;
+			buttons[2] = p.btnAntwort3;
+			buttons[3] = p.btnAntwort4;
+		} else if (panel instanceof VideoGamesPanel) {
+			VideoGamesPanel p = (VideoGamesPanel) panel;
+			buttons[0] = p.btnAntwort1;
+			buttons[1] = p.btnAntwort2;
+			buttons[2] = p.btnAntwort3;
+			buttons[3] = p.btnAntwort4;
+		}
+
+		// prüft welcher Button die richtige Antwort hat
+		for (JButton b : buttons) {
+			if (b != null && b.getText().equals(säubere(aktuelleRichtigeAntwort))) {
+				b.setBackground(new Color(200, 240, 200));
+				b.setBorder(new LineBorder(new Color(46, 204, 113), 3, true));
+			}
+		}
 	}
 }
