@@ -11,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
+import javax.swing.JTextPane;
 
 public class AnmeldePanel extends JPanel
 {
@@ -24,6 +25,7 @@ public class AnmeldePanel extends JPanel
 	private JPasswordField textField_1;
 	private JButton btnRegistrieren;
 	private JButton btnAnmelden;
+	private JTextPane txtpnAnmeldeInfo;
 
 	public AnmeldePanel(Controller controller)
 	{
@@ -43,6 +45,7 @@ public class AnmeldePanel extends JPanel
 		add(getTextField_1());
 		add(getBtnRegistrieren());
 		add(getBtnAnmelden());
+		add(getTxtpnAnmeldeInfo());
 	}
 
 	private JLabel getLblUberschrift()
@@ -63,7 +66,7 @@ public class AnmeldePanel extends JPanel
 			lblNewLabel = new JLabel("Name:");
 			lblNewLabel.setForeground(new Color(160, 170, 190));
 			lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 24));
-			lblNewLabel.setBounds(389, 200, 150, 30);
+			lblNewLabel.setBounds(440, 200, 150, 30);
 		}
 		return lblNewLabel;
 	}
@@ -77,7 +80,7 @@ public class AnmeldePanel extends JPanel
 			textField.setFont(new Font("Arial", Font.PLAIN, 20));
 			textField.setBorder(new LineBorder(new Color(0, 150, 200), 2));
 			textField.setCaretColor(Color.WHITE);
-			textField.setBounds(389, 240, 500, 45);
+			textField.setBounds(440, 240, 448, 45);
 			textField.setColumns(10);
 		}
 		return textField;
@@ -89,7 +92,7 @@ public class AnmeldePanel extends JPanel
 			lblNewLabel_1 = new JLabel("Passwort:");
 			lblNewLabel_1.setForeground(new Color(160, 170, 190));
 			lblNewLabel_1.setFont(new Font("Arial", Font.PLAIN, 24));
-			lblNewLabel_1.setBounds(389, 320, 150, 30);
+			lblNewLabel_1.setBounds(440, 320, 150, 30);
 		}
 		return lblNewLabel_1;
 	}
@@ -104,7 +107,7 @@ public class AnmeldePanel extends JPanel
 			textField_1.setFont(new Font("Arial", Font.PLAIN, 20));
 			textField_1.setBorder(new LineBorder(new Color(0, 150, 200), 2));
 			textField_1.setCaretColor(Color.WHITE);
-			textField_1.setBounds(389, 360, 500, 45);
+			textField_1.setBounds(440, 360, 448, 45);
 			textField_1.setColumns(10);
 		}
 		return textField_1;
@@ -133,7 +136,7 @@ public class AnmeldePanel extends JPanel
 		btn.setFont(new Font("Arial", Font.BOLD, 18));
 		btn.setForeground(Color.WHITE);
 		btn.setBackground(new Color(35, 50, 75));
-		btn.setBounds(389, 450, width, height);
+		btn.setBounds(x, y, width, height);
 		btn.setFocusPainted(false);
 		btn.setBorder(new LineBorder(new Color(0, 150, 200), 3, true));
 
@@ -156,5 +159,24 @@ public class AnmeldePanel extends JPanel
 				btn.setBounds(x, y, width, height);
 			}
 		});
+	}
+
+	private JTextPane getTxtpnAnmeldeInfo()
+	{
+		if (txtpnAnmeldeInfo == null) {
+			txtpnAnmeldeInfo = new JTextPane();
+			txtpnAnmeldeInfo.setForeground(Color.WHITE);
+			txtpnAnmeldeInfo.setFont(new Font("Arial", Font.PLAIN, 14));
+
+			txtpnAnmeldeInfo.setOpaque(false); // Hintergrund weg
+			txtpnAnmeldeInfo.setBorder(null);
+
+			txtpnAnmeldeInfo.setText(
+					"Melde dich einfach ganz normal an, wenn du schonmal hier warst, werden deine Daten automatisch geladen");
+			txtpnAnmeldeInfo.setBounds(392, 114, 495, 45);
+			txtpnAnmeldeInfo.setEditable(false);
+			txtpnAnmeldeInfo.setFocusable(false); // Cursor wird nicht angezgeigt
+		}
+		return txtpnAnmeldeInfo;
 	}
 }
